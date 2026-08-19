@@ -1,0 +1,33 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament';
+@source '../../../../resources/views/filament';
+
+:root {
+    --sidebar-bg: #0f172a;
+}
+
+/* 1. Mengubah Background Sidebar */
+html body .fi-sidebar,
+html body .fi-sidebar-nav {
+    background-color: var(--sidebar-bg) !important;
+}
+
+/* 2. Warna Teks & Ikon saat TIDAK aktif (Default) */
+html body .fi-sidebar-item:not(.fi-active) a span,
+html body .fi-sidebar-item:not(.fi-active) a svg {
+    color: #ffffff !important;
+    opacity: 0.7 !important; /* Sedikit redup agar beda dengan yang aktif */
+}
+
+/* 3. Efek SAAT KURSOR DIARAHKAN (HOVER) */
+html body .fi-sidebar-item:not(.fi-active) a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Memberikan efek kotak transparan */
+}
+
+/* 4. Memastikan teks & ikon tetap putih terang saat di-hover */
+html body .fi-sidebar-item:not(.fi-active) a:hover span,
+html body .fi-sidebar-item:not(.fi-active) a:hover svg {
+    color: #ffffff !important;
+    opacity: 1 !important; /* Menyala saat di-hover */
+}
